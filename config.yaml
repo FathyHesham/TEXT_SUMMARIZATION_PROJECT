@@ -1,0 +1,4 @@
+model_name : "facebook/bart-large-cnn"
+min_length : 80
+max_length : 160
+num_beams : 8
