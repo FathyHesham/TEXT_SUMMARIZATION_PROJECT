@@ -1,4 +1,4 @@
-from transformers import BartTokenizer, BartForConditionalGeneration
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 from custom_logger.custom_logging import CustomLogger
 from utils.config_loader import ConfigLoader
 import torch
@@ -21,8 +21,8 @@ class Summarization:
 
     def load_model(self):
         try:
-            self.tokenizer = BartTokenizer.from_pretrained(self.model_name)
-            self.model = BartForConditionalGeneration.from_pretrained(self.model_name)
+            self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
+            self.model = AutoModelForSeq2SeqLM.from_pretrained(self.model_name)
             self.model = self.model.to(device)
             self.logger.info(f"Model {self.model_name} loaded successfully.")
         except Exception as e:

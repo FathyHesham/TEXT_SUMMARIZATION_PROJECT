@@ -1,4 +1,4 @@
-model_name : "facebook/bart-large-cnn"
+model_name : "philschmid/bart-large-cnn-samsum"
 min_length : 80
 max_length : 160
 num_beams : 8
